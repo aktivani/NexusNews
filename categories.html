@@ -1,206 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusNews - Categories</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexusNews | Categories</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/theme-toggle.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Nexus<span>News</span></h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="categories.html" class="active">Categories</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <div class="theme-toggle">
-                    <input type="checkbox" id="dark-mode-toggle" hidden>
-                    <label for="dark-mode-toggle" class="theme-toggle-label">
-                        <i class="fas fa-moon"></i>
-                        <i class="fas fa-sun"></i>
-                    </label>
-                </div>
-            </div>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>Nexus<span>News</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html" class="active">Categories</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <input type="checkbox" id="dark-mode-toggle" hidden />
+        <label for="dark-mode-toggle" class="theme-toggle-label">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h2>Categories</h2>
+      <p>Browse articles by topic</p>
+    </div>
+  </section>
+
+  <!-- Categories Layout -->
+  <section class="container categories-content">
+    <!-- Sidebar -->
+    <aside class="categories-sidebar">
+      <h3>All Categories</h3>
+      <div class="categories-filter">
+        <ul>
+          <li><a href="#tech">Technology</a></li>
+          <li><a href="#gaming">Gaming</a></li>
+          <li><a href="#lifestyle">Lifestyle</a></li>
+          <li><a href="#business">Business</a></li>
+        </ul>
+      </div>
+
+      <!-- Dropdown for quick jump -->
+      <div class="articles-dropdown">
+        <select onchange="if(this.value) window.location.href=this.value">
+          <option value="">Select an article</option>
+          <option value="article1.html">Tech: AI Revolution</option>
+          <option value="article2.html">Gaming: Esports Growth</option>
+          <option value="article3.html">Lifestyle: Work-Life Balance</option>
+          <option value="article4.html">Business: Market Trends</option>
+        </select>
+      </div>
+    </aside>
+
+    <!-- Articles Grid -->
+    <div class="articles-grid">
+      <!-- Example Card -->
+      <a href="article1.html" class="article-card">
+        <div class="article-image">
+          <img src="assets/images/tech.jpg" alt="AI Revolution" />
+          <span class="category-tag">Technology</span>
         </div>
-    </header>
-
-    <section class="page-header">
-        <div class="container">
-            <h2>Article Categories</h2>
-            <p>Browse news by category or use the dropdown to find specific articles</p>
+        <div class="article-content">
+          <h3>AI Revolution in 2025</h3>
+          <p class="article-excerpt">
+            Artificial Intelligence continues to reshape industries with automation, creativity, and innovation at the forefront...
+          </p>
+          <div class="article-meta">
+            <span><i class="fas fa-user"></i> John Doe</span>
+            <span><i class="fas fa-calendar"></i> Aug 15, 2025</span>
+          </div>
         </div>
-    </section>
+      </a>
 
-    <main class="container">
-        <div class="categories-content">
-            <aside class="categories-sidebar">
-                <div class="categories-filter">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="#" class="active">All News</a></li>
-                        <li><a href="#">Breaking News</a></li>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#">Health</a></li>
-                        <li><a href="#">Environment</a></li>
-                        <li><a href="#">Politics</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Entertainment</a></li>
-                        <li><a href="#">Sports</a></li>
-                    </ul>
-                </div>
-
-                <div class="articles-dropdown">
-                    <h3>Quick Article Navigation</h3>
-                    <select id="articles-select">
-                        <option value="">Select an article...</option>
-                        <option value="1">Major Breakthrough in Renewable Energy Technology</option>
-                        <option value="2">AI Revolution: How Machine Learning is Transforming Industries</option>
-                        <option value="3">New Study Reveals Benefits of Mediterranean Diet for Longevity</option>
-                        <option value="4">Global Initiative Aims to Plant 1 Trillion Trees by 2030</option>
-                        <option value="5">Tech Giant Unveils Revolutionary Smartphone with Foldable Display</option>
-                        <option value="6">Climate Summit Reaches Historic Agreement on Carbon Emissions</option>
-                    </select>
-                </div>
-            </aside>
-
-            <section class="categories-articles">
-                <h2 class="section-title">All Articles</h2>
-                <div class="articles-grid">
-                    <article class="article-card" data-id="1">
-                        <div class="article-image">
-                            <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Breaking News">
-                            <span class="category-tag">Breaking</span>
-                        </div>
-                        <div class="article-content">
-                            <h3>Major Breakthrough in Renewable Energy Technology</h3>
-                            <p class="article-excerpt">Scientists have developed a new solar panel technology that doubles energy efficiency while reducing production costs by 40%.</p>
-                            <div class="article-meta">
-                                <span class="date"><i class="far fa-clock"></i> 2 hours ago</span>
-                                <span class="author"><i class="far fa-user"></i> Sarah Johnson</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-card" data-id="2">
-                        <div class="article-image">
-                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Technology">
-                            <span class="category-tag">Technology</span>
-                        </div>
-                        <div class="article-content">
-                            <h3>AI Revolution: How Machine Learning is Transforming Industries</h3>
-                            <p class="article-excerpt">From healthcare to finance, artificial intelligence is reshaping how businesses operate and deliver value to customers.</p>
-                            <div class="article-meta">
-                                <span class="date"><i class="far fa-clock"></i> 5 hours ago</span>
-                                <span class="author"><i class="far fa-user"></i> Michael Chen</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-card" data-id="3">
-                        <div class="article-image">
-                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Health">
-                            <span class="category-tag">Health</span>
-                        </div>
-                        <div class="article-content">
-                            <h3>New Study Reveals Benefits of Mediterranean Diet for Longevity</h3>
-                            <p class="article-excerpt">Research confirms that following a Mediterranean diet can add up to 5 years to your life expectancy and reduce chronic disease risk.</p>
-                            <div class="article-meta">
-                                <span class="date"><i class="far fa-clock"></i> 1 day ago</span>
-                                <span class="author"><i class="far fa-user"></i> Dr. Emily Rodriguez</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-card" data-id="4">
-                        <div class="article-image">
-                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80" alt="Environment">
-                            <span class="category-tag">Environment</span>
-                        </div>
-                        <div class="article-content">
-                            <h3>Global Initiative Aims to Plant 1 Trillion Trees by 2030</h3>
-                            <p class="article-excerpt">An international coalition of governments and NGOs has launched an ambitious plan to combat climate change through reforestation.</p>
-                            <div class="article-meta">
-                                <span class="date"><i class="far fa-clock"></i> 2 days ago</span>
-                                <span class="author"><i class="far fa-user"></i> James Wilson</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-card" data-id="5">
-                        <div class="article-image">
-                            <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Technology">
-                            <span class="category-tag">Technology</span>
-                        </div>
-                        <div class="article-content">
-                            <h3>Tech Giant Unveils Revolutionary Smartphone with Foldable Display</h3>
-                            <p class="article-excerpt">The latest flagship smartphone features an innovative foldable screen that transforms from phone to tablet in seconds.</p>
-                            <div class="article-meta">
-                                <span class="date"><i class="far fa-clock"></i> 3 days ago</span>
-                                <span class="author"><i class="far fa-user"></i> Lisa Zhang</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-card" data-id="6">
-                        <div class="article-image">
-                            <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Environment">
-                            <span class="category-tag">Environment</span>
-                        </div>
-                        <div class="article-content">
-                            <h3>Climate Summit Reaches Historic Agreement on Carbon Emissions</h3>
-                            <p class="article-excerpt">World leaders have agreed on ambitious targets to reduce carbon emissions by 50% by 2030, marking a turning point in climate policy.</p>
-                            <div class="article-meta">
-                                <span class="date"><i class="far fa-clock"></i> 4 days ago</span>
-                                <span class="author"><i class="far fa-user"></i> Robert Kim</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
+      <a href="article2.html" class="article-card">
+        <div class="article-image">
+          <img src="assets/images/gaming.jpg" alt="Esports Growth" />
+          <span class="category-tag">Gaming</span>
         </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>NexusNews</h3>
-                    <p>Delivering accurate and timely news from around the world.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="categories.html">Categories</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 NexusNews. All rights reserved.</p>
-            </div>
+        <div class="article-content">
+          <h3>The Growth of Esports</h3>
+          <p class="article-excerpt">
+            Esports is no longer niche — millions of viewers tune in globally, turning pro gamers into celebrities...
+          </p>
+          <div class="article-meta">
+            <span><i class="fas fa-user"></i> Jane Smith</span>
+            <span><i class="fas fa-calendar"></i> Aug 20, 2025</span>
+          </div>
         </div>
-    </footer>
+      </a>
 
-    <script src="script.js"></script>
+      <a href="article3.html" class="article-card">
+        <div class="article-image">
+          <img src="assets/images/lifestyle.jpg" alt="Work-Life Balance" />
+          <span class="category-tag">Lifestyle</span>
+        </div>
+        <div class="article-content">
+          <h3>Mastering Work-Life Balance</h3>
+          <p class="article-excerpt">
+            As remote work grows, maintaining balance is essential for productivity, health, and happiness...
+          </p>
+          <div class="article-meta">
+            <span><i class="fas fa-user"></i> Alex Johnson</span>
+            <span><i class="fas fa-calendar"></i> Aug 22, 2025</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="article4.html" class="article-card">
+        <div class="article-image">
+          <img src="assets/images/business.jpg" alt="Market Trends" />
+          <span class="category-tag">Business</span>
+        </div>
+        <div class="article-content">
+          <h3>Market Trends in 2025</h3>
+          <p class="article-excerpt">
+            Businesses adapt quickly to new technologies and global economic changes, shaping future opportunities...
+          </p>
+          <div class="article-meta">
+            <span><i class="fas fa-user"></i> Emily Brown</span>
+            <span><i class="fas fa-calendar"></i> Aug 25, 2025</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h3>About NexusNews</h3>
+        <p>Your daily source for the latest updates across tech, gaming, lifestyle, and business.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 NexusNews. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
 </body>
 </html>
