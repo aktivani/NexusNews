@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ensureDropdown();
 });
 
-/* ========== THEME TOGGLE ========== */
 function applyThemeFromStorage() {
   const saved = localStorage.getItem('theme');
   const theme = saved === 'dark' ? 'dark' : 'light';
@@ -23,11 +22,10 @@ function setupThemeToggle() {
   if (btn) btn.addEventListener('click', toggleTheme);
 }
 
-/* ========== MAKE ARTICLE CARDS CLICKABLE ========== */
 function setupArticleRedirects() {
   const articleCards = document.querySelectorAll('.article-card');
   articleCards.forEach(card => {
-    if (card.tagName.toLowerCase() === 'a') return; // already link
+    if (card.tagName.toLowerCase() === 'a') return; 
     const link = card.querySelector('a');
     if (link) {
       card.style.cursor = 'pointer';
@@ -38,7 +36,6 @@ function setupArticleRedirects() {
   });
 }
 
-/* ========== NEWSLETTER FORM ========== */
 function setupNewsletterForm() {
   const form = document.getElementById('newsletterForm');
   if (!form) return;
@@ -54,7 +51,6 @@ function setupNewsletterForm() {
   });
 }
 
-/* ========== BACK TO TOP BUTTON ========== */
 function setupBackToTop() {
   let btn = document.getElementById('backToTop');
   if (!btn) return;
@@ -66,7 +62,6 @@ function setupBackToTop() {
   });
 }
 
-/* ========== ENSURE DROPDOWN ALWAYS BUILDS ========== */
 function ensureDropdown() {
   const nav = document.querySelector('nav ul');
   if (!nav) return;
