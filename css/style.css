@@ -381,3 +381,8 @@ html[data-theme="dark"] .form-group textarea {
   .article-navigation { flex-direction: column; gap: 1rem; }
   .share-article { justify-content: center; }
 }
+
+.dropdown:hover .dropdown-menu,
+.dropdown .dropdown-menu:hover {
+  display: block;
+}
