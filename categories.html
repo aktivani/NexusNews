@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Categories - Nexus News</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Fix category images breaking layout */
+    .category-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -35,47 +45,39 @@
   </header>
 
   <main class="container">
-    <h2>Browse Articles by Category</h2>
+    <h1>All Categories</h1>
     <div class="categories-grid">
-      <div class="category-card" onclick="location.href='article-1.html'">
+      <div class="category-card">
         <img src="images/article-1-thumb.jpg" alt="Quantum Computing">
-        <h3>Quantum Computing</h3>
-        <p>Discover the revolution in quantum technology.</p>
+        <h3><a href="article-1.html">The Rise of Quantum Computing</a></h3>
       </div>
-      <div class="category-card" onclick="location.href='article-2.html'">
+      <div class="category-card">
         <img src="images/article-2-thumb.jpg" alt="Sustainable Cities">
-        <h3>Sustainable Cities</h3>
-        <p>Explore eco-friendly urban planning solutions.</p>
+        <h3><a href="article-2.html">Sustainable Cities of the Future</a></h3>
       </div>
-      <div class="category-card" onclick="location.href='article-3.html'">
+      <div class="category-card">
         <img src="images/article-3-thumb.jpg" alt="Climate Pact">
-        <h3>Climate Pact</h3>
-        <p>World leaders unite to fight climate change.</p>
+        <h3><a href="article-3.html">Global Climate Pact Reached</a></h3>
       </div>
-      <div class="category-card" onclick="location.href='article-4.html'">
+      <div class="category-card">
         <img src="images/article-4-thumb.jpg" alt="Smartphone Review">
-        <h3>Smartphone Review</h3>
-        <p>A closer look at the new titanium smartphone.</p>
+        <h3><a href="article-4.html">Review: The New Titanium Smartphone</a></h3>
       </div>
-      <div class="category-card" onclick="location.href='article-5.html'">
+      <div class="category-card">
         <img src="images/article-5-thumb.jpg" alt="Artificial Intelligence">
-        <h3>Artificial Intelligence</h3>
-        <p>Breakthroughs in self-learning AI systems.</p>
+        <h3><a href="article-5.html">Breakthrough in Artificial Intelligence</a></h3>
       </div>
-      <div class="category-card" onclick="location.href='article-6.html'">
+      <div class="category-card">
         <img src="images/article-6-thumb.jpg" alt="Ocean Exploration">
-        <h3>Ocean Exploration</h3>
-        <p>Exploring the last frontier of Earth’s oceans.</p>
+        <h3><a href="article-6.html">Exploring the Depths of the Ocean</a></h3>
       </div>
-      <div class="category-card" onclick="location.href='article-7.html'">
+      <div class="category-card">
         <img src="images/article-7-thumb.jpg" alt="Mars Colonization">
-        <h3>Mars Colonization</h3>
-        <p>Preparing for humanity’s settlement on Mars.</p>
+        <h3><a href="article-7.html">Mars Colonization: Next Giant Leap</a></h3>
       </div>
-      <div class="category-card" onclick="location.href='article-8.html'">
+      <div class="category-card">
         <img src="images/article-8-thumb.jpg" alt="Renewable Energy">
-        <h3>Renewable Energy</h3>
-        <p>The innovations shaping our sustainable future.</p>
+        <h3><a href="article-8.html">The Future of Renewable Energy</a></h3>
       </div>
     </div>
   </main>
