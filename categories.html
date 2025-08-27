@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NexusNews | Categories</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/theme-toggle.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
 </head>
 <body>
   <!-- Header -->
@@ -19,15 +19,9 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="categories.html" class="active">Categories</a></li>
           <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <div class="header-actions">
-        <input type="checkbox" id="dark-mode-toggle" hidden />
-        <label for="dark-mode-toggle" class="theme-toggle-label">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun"></i>
-        </label>
-      </div>
     </div>
   </header>
 
@@ -57,20 +51,19 @@
       <div class="articles-dropdown">
         <select onchange="if(this.value) window.location.href=this.value">
           <option value="">Select an article</option>
-          <option value="article1.html">Tech: AI Revolution</option>
-          <option value="article2.html">Gaming: Esports Growth</option>
-          <option value="article3.html">Lifestyle: Work-Life Balance</option>
-          <option value="article4.html">Business: Market Trends</option>
+          <option value="article-1.html">Tech: AI Revolution</option>
+          <option value="article-2.html">Gaming: Esports Growth</option>
+          <option value="article-3.html">Lifestyle: Work-Life Balance</option>
+          <option value="article-4.html">Business: Market Trends</option>
         </select>
       </div>
     </aside>
 
     <!-- Articles Grid -->
     <div class="articles-grid">
-      <!-- Example Card -->
-      <a href="article1.html" class="article-card">
+      <a href="article-1.html" class="article-card">
         <div class="article-image">
-          <img src="assets/images/tech.jpg" alt="AI Revolution" />
+          <img src="images/tech.jpg" alt="AI Revolution" />
           <span class="category-tag">Technology</span>
         </div>
         <div class="article-content">
@@ -85,9 +78,9 @@
         </div>
       </a>
 
-      <a href="article2.html" class="article-card">
+      <a href="article-2.html" class="article-card">
         <div class="article-image">
-          <img src="assets/images/gaming.jpg" alt="Esports Growth" />
+          <img src="images/gaming.jpg" alt="Esports Growth" />
           <span class="category-tag">Gaming</span>
         </div>
         <div class="article-content">
@@ -102,9 +95,9 @@
         </div>
       </a>
 
-      <a href="article3.html" class="article-card">
+      <a href="article-3.html" class="article-card">
         <div class="article-image">
-          <img src="assets/images/lifestyle.jpg" alt="Work-Life Balance" />
+          <img src="images/lifestyle.jpg" alt="Work-Life Balance" />
           <span class="category-tag">Lifestyle</span>
         </div>
         <div class="article-content">
@@ -119,9 +112,9 @@
         </div>
       </a>
 
-      <a href="article4.html" class="article-card">
+      <a href="article-4.html" class="article-card">
         <div class="article-image">
-          <img src="assets/images/business.jpg" alt="Market Trends" />
+          <img src="images/business.jpg" alt="Market Trends" />
           <span class="category-tag">Business</span>
         </div>
         <div class="article-content">
@@ -141,29 +134,8 @@
   <!-- Footer -->
   <footer>
     <div class="container footer-content">
-      <div class="footer-section">
-        <h3>About NexusNews</h3>
-        <p>Your daily source for the latest updates across tech, gaming, lifestyle, and business.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="categories.html">Categories</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Follow Us</h4>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 NexusNews. All rights reserved.</p>
+      <p>&copy; 2025 Nexus News. All rights reserved.</p>
+      <p>AINT003-4-C Individual Assignment - Awab Nagmeldin TP081769</p>
     </div>
   </footer>
 
