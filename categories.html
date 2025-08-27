@@ -3,73 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Categories - Nexus News</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>NexusNews - Categories</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <a href="index.html" class="logo">Nexus News</a>
+            <div class="logo">
+                <h1>Nexus<span>News</span></h1>
+            </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="categories.html">Categories</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="categories.html" class="active">Categories</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
+            <div class="header-actions">
+                <div class="theme-toggle">
+                    <input type="checkbox" id="dark-mode-toggle" hidden>
+                    <label for="dark-mode-toggle" class="theme-toggle-label">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </label>
+                </div>
+            </div>
         </div>
     </header>
 
+    <section class="page-header">
+        <div class="container">
+            <h2>Article Categories</h2>
+            <p>Browse news by category or use the dropdown to find specific articles</p>
+        </div>
+    </section>
+
     <main class="container">
-        <h1>News Categories</h1>
-        
-        <div class="categories-grid">
-            <div class="category-card" id="tech">
-                <h2>Technology</h2>
-                <p>Latest developments in tech, gadgets, AI, and innovation</p>
-                <a href="article-1.html" class="read-more">Read Articles</a>
-            </div>
-            
-            <div class="category-card" id="science">
-                <h2>Science</h2>
-                <p>Breakthroughs in research, space exploration, and discoveries</p>
-                <a href="article-2.html" class="read-more">Read Articles</a>
-            </div>
-            
-            <div class="category-card" id="world">
-                <h2>World News</h2>
-                <p>International affairs, politics, and global events</p>
-                <a href="article-3.html" class="read-more">Read Articles</a>
-            </div>
-            
-            <div class="category-card" id="health">
-                <h2>Health</h2>
-                <p>Medical news, wellness advice, and healthcare innovations</p>
-                <a href="article-5.html" class="read-more">Read Articles</a>
-            </div>
-            
-            <div class="category-card" id="business">
-                <h2>Business</h2>
-                <p>Financial markets, companies, and economic trends</p>
-                <a href="article-7.html" class="read-more">Read Articles</a>
-            </div>
-            
-            <div class="category-card" id="entertainment">
-                <h2>Entertainment</h2>
-                <p>Film, music, arts, and celebrity news</p>
-                <a href="article-8.html" class="read-more">Read Articles</a>
-            </div>
+        <div class="categories-content">
+            <aside class="categories-sidebar">
+                <div class="categories-filter">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#" class="active">All News</a></li>
+                        <li><a href="#">Breaking News</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Health</a></li>
+                        <li><a href="#">Environment</a></li>
+                        <li><a href="#">Politics</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Entertainment</a></li>
+                        <li><a href="#">Sports</a></li>
+                    </ul>
+                </div>
+
+                <div class="articles-dropdown">
+                    <h3>Quick Article Navigation</h3>
+                    <select id="articles-select">
+                        <option value="">Select an article...</option>
+                        <option value="1">Major Breakthrough in Renewable Energy Technology</option>
+                        <option value="2">AI Revolution: How Machine Learning is Transforming Industries</option>
+                        <option value="3">New Study Reveals Benefits of Mediterranean Diet for Longevity</option>
+                        <option value="4">Global Initiative Aims to Plant 1 Trillion Trees by 2030</option>
+                        <option value="5">Tech Giant Unveils Revolutionary Smartphone with Foldable Display</option>
+                        <option value="6">Climate Summit Reaches Historic Agreement on Carbon Emissions</option>
+                    </select>
+                </div>
+            </aside>
+
+            <section class="categories-articles">
+                <h2 class="section-title">All Articles</h2>
+                <div class="articles-grid">
+                    <article class="article-card" data-id="1">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Breaking News">
+                            <span class="category-tag">Breaking</span>
+                        </div>
+                        <div class="article-content">
+                            <h3>Major Breakthrough in Renewable Energy Technology</h3>
+                            <p class="article-excerpt">Scientists have developed a new solar panel technology that doubles energy efficiency while reducing production costs by 40%.</p>
+                            <div class="article-meta">
+                                <span class="date"><i class="far fa-clock"></i> 2 hours ago</span>
+                                <span class="author"><i class="far fa-user"></i> Sarah Johnson</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card" data-id="2">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Technology">
+                            <span class="category-tag">Technology</span>
+                        </div>
+                        <div class="article-content">
+                            <h3>AI Revolution: How Machine Learning is Transforming Industries</h3>
+                            <p class="article-excerpt">From healthcare to finance, artificial intelligence is reshaping how businesses operate and deliver value to customers.</p>
+                            <div class="article-meta">
+                                <span class="date"><i class="far fa-clock"></i> 5 hours ago</span>
+                                <span class="author"><i class="far fa-user"></i> Michael Chen</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card" data-id="3">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Health">
+                            <span class="category-tag">Health</span>
+                        </div>
+                        <div class="article-content">
+                            <h3>New Study Reveals Benefits of Mediterranean Diet for Longevity</h3>
+                            <p class="article-excerpt">Research confirms that following a Mediterranean diet can add up to 5 years to your life expectancy and reduce chronic disease risk.</p>
+                            <div class="article-meta">
+                                <span class="date"><i class="far fa-clock"></i> 1 day ago</span>
+                                <span class="author"><i class="far fa-user"></i> Dr. Emily Rodriguez</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card" data-id="4">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80" alt="Environment">
+                            <span class="category-tag">Environment</span>
+                        </div>
+                        <div class="article-content">
+                            <h3>Global Initiative Aims to Plant 1 Trillion Trees by 2030</h3>
+                            <p class="article-excerpt">An international coalition of governments and NGOs has launched an ambitious plan to combat climate change through reforestation.</p>
+                            <div class="article-meta">
+                                <span class="date"><i class="far fa-clock"></i> 2 days ago</span>
+                                <span class="author"><i class="far fa-user"></i> James Wilson</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card" data-id="5">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Technology">
+                            <span class="category-tag">Technology</span>
+                        </div>
+                        <div class="article-content">
+                            <h3>Tech Giant Unveils Revolutionary Smartphone with Foldable Display</h3>
+                            <p class="article-excerpt">The latest flagship smartphone features an innovative foldable screen that transforms from phone to tablet in seconds.</p>
+                            <div class="article-meta">
+                                <span class="date"><i class="far fa-clock"></i> 3 days ago</span>
+                                <span class="author"><i class="far fa-user"></i> Lisa Zhang</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card" data-id="6">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Environment">
+                            <span class="category-tag">Environment</span>
+                        </div>
+                        <div class="article-content">
+                            <h3>Climate Summit Reaches Historic Agreement on Carbon Emissions</h3>
+                            <p class="article-excerpt">World leaders have agreed on ambitious targets to reduce carbon emissions by 50% by 2030, marking a turning point in climate policy.</p>
+                            <div class="article-meta">
+                                <span class="date"><i class="far fa-clock"></i> 4 days ago</span>
+                                <span class="author"><i class="far fa-user"></i> Robert Kim</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Nexus News. All rights reserved.</p>
-            <p>AINT003-4-C Individual Assignment - Awab Nagmeldin TP081769</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NexusNews</h3>
+                    <p>Delivering accurate and timely news from around the world.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 NexusNews. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
