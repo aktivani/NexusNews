@@ -71,16 +71,16 @@ function ensureDropdown() {
   if (!categoriesLi.querySelector('.dropdown-menu')) {
     const ul = document.createElement('ul');
     ul.className = 'dropdown-menu';
-    ul.innerHTML = `
-      <li><a href="article-1.html">The Rise of Quantum Computing</a></li>
-      <li><a href="article-2.html">Sustainable Cities of the Future</a></li>
-      <li><a href="article-3.html">Global Climate Pact Reached</a></li>
-      <li><a href="article-4.html">Review: The New Titanium Smartphone</a></li>
-      <li><a href="article-5.html">Breakthrough in Artificial Intelligence</a></li>
-      <li><a href="article-6.html">Exploring the Depths of the Ocean</a></li>
-      <li><a href="article-7.html">Mars Colonization: Next Giant Leap</a></li>
-      <li><a href="article-8.html">The Future of Renewable Energy</a></li>
-    `;
+   ul.innerHTML = `
+  <li><a href="article-1.html">The Rise of Quantum Computing</a></li>
+  <li><a href="article-2.html">Sustainable Cities of the Future</a></li>
+  <li><a href="article-3.html">Global Climate Pact Reached</a></li>
+  <li><a href="article-4.html">Review: The New Titanium Smartphone</a></li>
+  <li><a href="article-5.html">Breakthrough in Artificial Intelligence</a></li>
+  <li><a href="article-6.html">Fusion Reactor Discovery</a></li>
+  <li><a href="article-7.html">Stock Market Historic Rise</a></li>
+  <li><a href="article-8.html">The Future of Virtual Reality</a></li>
+`;
     categoriesLi.appendChild(ul);
   }
 }

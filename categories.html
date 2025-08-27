@@ -4,69 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Categories - Nexus News</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-<header>
-  <div class="container">
-    <a href="index.html" class="logo">Nexus News</a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="categories.html">Categories</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <button id="theme-toggle-btn">🌓</button>
-  </div>
-</header>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Nexus News</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Categories</a>
+            <ul class="dropdown-menu">
+              <li><a href="article-1.html">The Rise of Quantum Computing</a></li>
+              <li><a href="article-2.html">Sustainable Cities of the Future</a></li>
+              <li><a href="article-3.html">Global Climate Pact Reached</a></li>
+              <li><a href="article-4.html">Review: The New Titanium Smartphone</a></li>
+              <li><a href="article-5.html">Breakthrough in Artificial Intelligence</a></li>
+              <li><a href="article-6.html">Breakthrough Discovery in Fusion Reactors</a></li>
+              <li><a href="article-7.html">Global Stock Market Sees Historic Rise</a></li>
+              <li><a href="article-8.html">The Future of Virtual Reality</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle-btn" class="theme-toggle-btn">🌓</button>
+    </div>
+  </header>
 
-<main class="container">
-  <h1>All News Articles</h1>
+  <main class="container">
+    <h1>All Articles</h1>
+    <div class="categories-grid">
 
-  <div class="categories-grid">
-    <a href="article-1.html" class="category-card">
-      <img src="images/article-1-thumb.jpg" alt="Quantum Computing">
-      <h3>The Rise of Quantum Computing</h3>
-    </a>
-    <a href="article-2.html" class="category-card">
-      <img src="images/article-2-thumb.jpg" alt="Sustainable Cities">
-      <h3>Sustainable Cities of the Future</h3>
-    </a>
-    <a href="article-3.html" class="category-card">
-      <img src="images/article-3-thumb.jpg" alt="Climate Pact">
-      <h3>Global Climate Pact Reached</h3>
-    </a>
-    <a href="article-4.html" class="category-card">
-      <img src="images/article-4-thumb.jpg" alt="Smartphone Review">
-      <h3>Review: The New Titanium Smartphone</h3>
-    </a>
-    <a href="article-5.html" class="category-card">
-      <img src="images/article-5-thumb.jpg" alt="Artificial Intelligence">
-      <h3>Breakthrough in Artificial Intelligence</h3>
-    </a>
-    <a href="article-6.html" class="category-card">
-      <img src="images/article-6-thumb.jpg" alt="Ocean Exploration">
-      <h3>Exploring the Depths of the Ocean</h3>
-    </a>
-    <a href="article-7.html" class="category-card">
-      <img src="images/article-7-thumb.jpg" alt="Mars Colonization">
-      <h3>Mars Colonization: Next Giant Leap</h3>
-    </a>
-    <a href="article-8.html" class="category-card">
-      <img src="images/article-8-thumb.jpg" alt="Renewable Energy">
-      <h3>The Future of Renewable Energy</h3>
-    </a>
-  </div>
-</main>
+      
+      <a href="article-1.html" class="category-card">
+        <img src="images/article-1.jpg" alt="Quantum Computing">
+        <h3>The Rise of Quantum Computing</h3>
+        <p>Quantum computing is advancing rapidly, offering the potential to solve problems beyond classical computing capabilities.</p>
+      </a>
 
-<footer>
-  <div class="container">
-    <p>&copy; 2025 Nexus News. All rights reserved.</p>
-    <p>AINT003-4-C Individual Assignment - Awab Nagmeldin TP081769</p>
-  </div>
-</footer>
+     
+      <a href="article-2.html" class="category-card">
+        <img src="images/article-2.jpg" alt="Sustainable Cities">
+        <h3>Sustainable Cities of the Future</h3>
+        <p>Urban planners are innovating eco-friendly infrastructures to build smarter and greener cities worldwide.</p>
+      </a>
+
+      
+      <a href="article-3.html" class="category-card">
+        <img src="images/article-3.jpg" alt="Climate Pact">
+        <h3>Global Climate Pact Reached</h3>
+        <p>World leaders sign a historic agreement to reduce emissions and mitigate climate change on a global scale.</p>
+      </a>
+
+      
+      <a href="article-4.html" class="category-card">
+        <img src="images/article-4.jpg" alt="Smartphone Review">
+        <h3>Review: The New Titanium Smartphone</h3>
+        <p>The latest titanium smartphone sets a new standard with durability, design, and cutting-edge technology.</p>
+      </a>
+
+      
+      <a href="article-5.html" class="category-card">
+        <img src="images/article-5.jpg" alt="Artificial Intelligence">
+        <h3>Breakthrough in Artificial Intelligence</h3>
+        <p>AI research achieves a major breakthrough, paving the way for smarter and more adaptive systems.</p>
+      </a>
+
+      
+      <a href="article-6.html" class="category-card">
+        <img src="images/article-6.jpg" alt="Fusion Reactor Discovery">
+        <h3>Breakthrough Discovery in Fusion Reactors</h3>
+        <p>Scientists achieve a breakthrough in nuclear fusion, unlocking clean and limitless energy potential.</p>
+      </a>
+
+     
+      <a href="article-7.html" class="category-card">
+        <img src="images/article-7.jpg" alt="Stock Market Rise">
+        <h3>Global Stock Market Sees Historic Rise</h3>
+        <p>Global markets hit record highs as investor confidence grows and industries rebound worldwide.</p>
+      </a>
+
+      
+      <a href="article-8.html" class="category-card">
+        <img src="images/article-8.jpg" alt="Virtual Reality Future">
+        <h3>The Future of Virtual Reality</h3>
+        <p>Virtual reality technologies are evolving, shaping new possibilities in entertainment, work, and education.</p>
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Nexus News. All rights reserved.</p>
+      <p>AINT003-4-C Individual Assignment - Awab Nagmeldin TP081769</p>
+    </div>
+  </footer>
 </body>
 </html>
