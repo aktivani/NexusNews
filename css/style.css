@@ -435,10 +435,11 @@ html[data-theme="dark"] .form-group textarea {
 
 .category-card img {
   width: 100%;
-  height: 220px; /
+  height: 220px;
   object-fit: cover;
   display: block;
 }
+
 
 .category-card h3 {
   padding: 1rem;
