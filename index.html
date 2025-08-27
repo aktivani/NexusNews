@@ -1,91 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus News - Your Window to the World</title>
-    <link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexus News - Your Window to the World</title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">Nexus News</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="categories.html">Categories</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Nexus News</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <!-- Categories with hover dropdown -->
+          <li class="dropdown">
+            <a href="categories.html">Categories</a>
+            <ul class="dropdown-menu">
+              <li><a href="article-1.html">The Rise of Quantum Computing</a></li>
+              <li><a href="article-2.html">Sustainable Cities of the Future</a></li>
+              <li><a href="article-3.html">Global Climate Pact Reached</a></li>
+              <li><a href="article-4.html">Review: The New Titanium Smartphone</a></li>
+            </ul>
+          </li>
+
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Dark mode toggle (persists via localStorage) -->
+      <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle dark mode">🌓</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Your Window to the World</h1>
+      <p>Stay informed with the latest news from around the globe</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <h2>Latest News</h2>
+
+    <!-- Make the entire card a link to stop 404s and remove the need for a Read More button -->
+    <div class="article-grid">
+      <a class="article-card" href="article-1.html">
+        <img src="images/article-1-thumb.jpg" alt="Quantum Computing"/>
+        <div class="article-content">
+          <h3>The Rise of Quantum Computing</h3>
+          <p>Quantum computing is set to revolutionize technology as we know it. Researchers are making breakthroughs...</p>
         </div>
-    </header>
+      </a>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Your Window to the World</h1>
-            <p>Stay informed with the latest news from around the globe</p>
+      <a class="article-card" href="article-2.html">
+        <img src="images/article-2-thumb.jpg" alt="Sustainable Cities"/>
+        <div class="article-content">
+          <h3>Sustainable Cities of the Future</h3>
+          <p>Urban planners are designing eco-friendly cities that could change how we live. From vertical gardens to...</p>
         </div>
-    </section>
+      </a>
 
-    <main class="container">
-        <h2>Latest News</h2>
-        
-        <div class="article-grid">
-            <div class="article-card">
-                <img src="images/article-1-thumb.jpg" alt="Quantum Computing">
-                <div class="article-content">
-                    <h3>The Rise of Quantum Computing</h3>
-                    <p>Quantum computing is set to revolutionize technology as we know it. Researchers are making breakthroughs...</p>
-                    <a href="article-1.html" class="read-more">Read More</a>
-                </div>
-            </div>
-
-            <div class="article-card">
-                <img src="images/article-2-thumb.jpg" alt="Sustainable Cities">
-                <div class="article-content">
-                    <h3>Sustainable Cities of the Future</h3>
-                    <p>Urban planners are designing eco-friendly cities that could change how we live. From vertical gardens to...</p>
-                    <a href="article-2.html" class="read-more">Read More</a>
-                </div>
-            </div>
-
-            <div class="article-card">
-                <img src="images/article-3-thumb.jpg" alt="Climate Pact">
-                <div class="article-content">
-                    <h3>Global Climate Pact Reached</h3>
-                    <p>World leaders have agreed on a historic climate agreement that aims to limit global warming to 1.5°C...</p>
-                    <a href="article-3.html" class="read-more">Read More</a>
-                </div>
-            </div>
-
-            <div class="article-card">
-                <img src="images/article-4-thumb.jpg" alt="Smartphone Review">
-                <div class="article-content">
-                    <h3>Review: The New Titanium Smartphone</h3>
-                    <p>The latest flagship phone promises durability and performance with its titanium frame and advanced...</p>
-                    <a href="article-4.html" class="read-more">Read More</a>
-                </div>
-            </div>
+      <a class="article-card" href="article-3.html">
+        <img src="images/article-3-thumb.jpg" alt="Climate Pact"/>
+        <div class="article-content">
+          <h3>Global Climate Pact Reached</h3>
+          <p>World leaders have agreed on a historic climate agreement that aims to limit global warming to 1.5°C...</p>
         </div>
+      </a>
 
-        <div class="newsletter">
-            <h3>Subscribe to Our Newsletter</h3>
-            <form id="newsletterForm">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
+      <a class="article-card" href="article-4.html">
+        <img src="images/article-4-thumb.jpg" alt="Smartphone Review"/>
+        <div class="article-content">
+          <h3>Review: The New Titanium Smartphone</h3>
+          <p>The latest flagship phone promises durability and performance with its titanium frame and advanced...</p>
         </div>
-    </main>
+      </a>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Nexus News. All rights reserved.</p>
-            <p>AINT003-4-C Individual Assignment - Awab Nagmeldin TP081769</p>
-        </div>
-    </footer>
+    <div class="newsletter">
+      <h3>Subscribe to Our Newsletter</h3>
+      <form id="newsletterForm">
+        <input type="email" placeholder="Enter your email" required/>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </main>
 
-    <script src="js/script.js"></script>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Nexus News. All rights reserved.</p>
+      <p>AINT003-4-C Individual Assignment - Awab Nagmeldin TP081769</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

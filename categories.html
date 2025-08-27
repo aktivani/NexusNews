@@ -1,142 +1,80 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexus News | Categories</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="js/script.js" defer></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexus News - Categories</title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="container">
       <a href="index.html" class="logo">Nexus News</a>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="categories.html" class="active">Categories</a></li>
+
+          <!-- Categories with hover dropdown -->
+          <li class="dropdown">
+            <a href="categories.html">Categories</a>
+            <ul class="dropdown-menu">
+              <li><a href="article-1.html">The Rise of Quantum Computing</a></li>
+              <li><a href="article-2.html">Sustainable Cities of the Future</a></li>
+              <li><a href="article-3.html">Global Climate Pact Reached</a></li>
+              <li><a href="article-4.html">Review: The New Titanium Smartphone</a></li>
+            </ul>
+          </li>
+
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <div class="header-actions">
-        <input type="checkbox" id="dark-mode-toggle" hidden />
-        <label for="dark-mode-toggle" class="theme-toggle-label">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun"></i>
-        </label>
-      </div>
+
+      <!-- Dark mode toggle -->
+      <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle dark mode">🌓</button>
     </div>
   </header>
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <div class="container">
-      <h2>Categories</h2>
-      <p>Browse articles by topic</p>
-    </div>
-  </section>
+  <main class="container">
+    <h2>Categories</h2>
+    <p>Select a story below or use the “Categories” hover menu in the header.</p>
 
-  <!-- Categories Layout -->
-  <section class="container categories-content">
-    <!-- Sidebar -->
-    <aside class="categories-sidebar">
-      <h3>All Categories</h3>
-      <div class="categories-filter">
-        <ul>
-          <li><a href="#tech">Technology</a></li>
-          <li><a href="#gaming">Gaming</a></li>
-          <li><a href="#lifestyle">Lifestyle</a></li>
-          <li><a href="#business">Business</a></li>
-        </ul>
-      </div>
-
-      <!-- Dropdown for quick jump -->
-      <div class="articles-dropdown">
-        <select onchange="if(this.value) window.location.href=this.value">
-          <option value="">Select an article</option>
-          <option value="article-1.html">Tech: AI Revolution</option>
-          <option value="article-2.html">Gaming: Esports Growth</option>
-          <option value="article-3.html">Lifestyle: Work-Life Balance</option>
-          <option value="article-4.html">Business: Market Trends</option>
-        </select>
-      </div>
-    </aside>
-
-    <!-- Articles Grid -->
-    <div class="articles-grid">
-      <a href="article-1.html" class="article-card">
-        <div class="article-image">
-          <img src="images/tech.jpg" alt="AI Revolution" />
-          <span class="category-tag">Technology</span>
-        </div>
+    <!-- Same four accessible articles (all whole-card links) -->
+    <div class="article-grid">
+      <a class="article-card" href="article-1.html">
+        <img src="images/article-1-thumb.jpg" alt="Quantum Computing"/>
         <div class="article-content">
-          <h3>AI Revolution in 2025</h3>
-          <p class="article-excerpt">
-            Artificial Intelligence continues to reshape industries with automation, creativity, and innovation at the forefront...
-          </p>
-          <div class="article-meta">
-            <span><i class="fas fa-user"></i> John Doe</span>
-            <span><i class="fas fa-calendar"></i> Aug 15, 2025</span>
-          </div>
+          <h3>The Rise of Quantum Computing</h3>
+          <p>Quantum computing is set to revolutionize technology as we know it. Researchers are making breakthroughs...</p>
         </div>
       </a>
 
-      <a href="article-2.html" class="article-card">
-        <div class="article-image">
-          <img src="images/gaming.jpg" alt="Esports Growth" />
-          <span class="category-tag">Gaming</span>
-        </div>
+      <a class="article-card" href="article-2.html">
+        <img src="images/article-2-thumb.jpg" alt="Sustainable Cities"/>
         <div class="article-content">
-          <h3>The Growth of Esports</h3>
-          <p class="article-excerpt">
-            Esports is no longer niche — millions of viewers tune in globally, turning pro gamers into celebrities...
-          </p>
-          <div class="article-meta">
-            <span><i class="fas fa-user"></i> Jane Smith</span>
-            <span><i class="fas fa-calendar"></i> Aug 20, 2025</span>
-          </div>
+          <h3>Sustainable Cities of the Future</h3>
+          <p>Urban planners are designing eco-friendly cities that could change how we live. From vertical gardens to...</p>
         </div>
       </a>
 
-      <a href="article-3.html" class="article-card">
-        <div class="article-image">
-          <img src="images/lifestyle.jpg" alt="Work-Life Balance" />
-          <span class="category-tag">Lifestyle</span>
-        </div>
+      <a class="article-card" href="article-3.html">
+        <img src="images/article-3-thumb.jpg" alt="Climate Pact"/>
         <div class="article-content">
-          <h3>Mastering Work-Life Balance</h3>
-          <p class="article-excerpt">
-            As remote work grows, maintaining balance is essential for productivity, health, and happiness...
-          </p>
-          <div class="article-meta">
-            <span><i class="fas fa-user"></i> Alex Johnson</span>
-            <span><i class="fas fa-calendar"></i> Aug 22, 2025</span>
-          </div>
+          <h3>Global Climate Pact Reached</h3>
+          <p>World leaders have agreed on a historic climate agreement that aims to limit global warming to 1.5°C...</p>
         </div>
       </a>
 
-      <a href="article-4.html" class="article-card">
-        <div class="article-image">
-          <img src="images/business.jpg" alt="Market Trends" />
-          <span class="category-tag">Business</span>
-        </div>
+      <a class="article-card" href="article-4.html">
+        <img src="images/article-4-thumb.jpg" alt="Smartphone Review"/>
         <div class="article-content">
-          <h3>Market Trends in 2025</h3>
-          <p class="article-excerpt">
-            Businesses adapt quickly to new technologies and global economic changes, shaping future opportunities...
-          </p>
-          <div class="article-meta">
-            <span><i class="fas fa-user"></i> Emily Brown</span>
-            <span><i class="fas fa-calendar"></i> Aug 25, 2025</span>
-          </div>
+          <h3>Review: The New Titanium Smartphone</h3>
+          <p>The latest flagship phone promises durability and performance with its titanium frame and advanced...</p>
         </div>
       </a>
     </div>
-  </section>
+  </main>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>&copy; 2025 Nexus News. All rights reserved.</p>
@@ -144,7 +82,6 @@
     </div>
   </footer>
 
-  <!-- FontAwesome for icons -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

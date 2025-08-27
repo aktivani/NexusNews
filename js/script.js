@@ -1,274 +1,106 @@
-// DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function() {
-    initializeTheme();
-    setupArticleRedirects();
-    setupDropdownNavigation();
-    setupSmoothScrolling();
-    setupCategoryFilters();
+// Nexus News - Site scripts
+// Fixes included: whole-card clicks, dark mode persistence, categories hover dropdown
+
+document.addEventListener('DOMContentLoaded', () => {
+  applyThemeFromStorage();
+  ensureHeaderControls();     // adds/initializes theme toggle + dropdown if missing
+  setupArticleCardClicks();   // makes <div class="article-card"> clickable if any exist
 });
 
-// Initialize theme from localStorage
-function initializeTheme() {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const savedTheme = localStorage.getItem('theme');
-    
-    if (savedTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        if (darkModeToggle) darkModeToggle.checked = true;
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        if (darkModeToggle) darkModeToggle.checked = false;
+/* ============== THEME ============== */
+function applyThemeFromStorage() {
+  const saved = localStorage.getItem('theme');
+  const theme = saved === 'dark' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', theme);
+
+  const btn = document.getElementById('theme-toggle-btn');
+  if (btn) {
+    btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    btn.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', current);
+  localStorage.setItem('theme', current);
+  const btn = document.getElementById('theme-toggle-btn');
+  if (btn) {
+    btn.setAttribute('aria-pressed', current === 'dark' ? 'true' : 'false');
+    btn.title = current === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+}
+
+/* ============== HEADER ENHANCEMENTS ============== */
+function ensureHeaderControls() {
+  const headerContainer = document.querySelector('header .container');
+  if (!headerContainer) return;
+
+  // Theme toggle button (inject if not present on some pages)
+  if (!document.getElementById('theme-toggle-btn')) {
+    const btn = document.createElement('button');
+    btn.id = 'theme-toggle-btn';
+    btn.className = 'theme-toggle-btn';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Toggle dark mode');
+    btn.textContent = '🌓';
+    btn.addEventListener('click', toggleTheme);
+    headerContainer.appendChild(btn);
+  }
+
+  // Build a dropdown under "Categories" if the HTML lacks one
+  const categoriesLi = findCategoriesNavItem();
+  if (categoriesLi) {
+    categoriesLi.classList.add('dropdown');
+    if (!categoriesLi.querySelector('.dropdown-menu')) {
+      const ul = document.createElement('ul');
+      ul.className = 'dropdown-menu';
+      ul.innerHTML = `
+        <li><a href="article-1.html">The Rise of Quantum Computing</a></li>
+        <li><a href="article-2.html">Sustainable Cities of the Future</a></li>
+        <li><a href="article-3.html">Global Climate Pact Reached</a></li>
+        <li><a href="article-4.html">Review: The New Titanium Smartphone</a></li>
+      `;
+      categoriesLi.appendChild(ul);
     }
-    
-    // Add event listener for theme toggle
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('change', function() {
-            if (this.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }
-        });
+  }
+}
+
+function findCategoriesNavItem() {
+  const nav = document.querySelector('header nav ul');
+  if (!nav) return null;
+  const items = Array.from(nav.querySelectorAll('li'));
+  return items.find(li => {
+    const a = li.querySelector('a');
+    return a && a.textContent.trim().toLowerCase() === 'categories';
+  }) || null;
+}
+
+/* ============== CARD CLICK HANDLER ============== */
+// If any page still uses <div class="article-card"> with an inner link,
+// make the whole card clickable to that link.
+function setupArticleCardClicks() {
+  document.querySelectorAll('.article-card').forEach(card => {
+    // If it's already an <a>, nothing to do.
+    if (card.tagName.toLowerCase() === 'a') return;
+
+    // Try to find a nested link (e.g., old "Read More" buttons).
+    let link = card.querySelector('a');
+    let href = link ? link.getAttribute('href') : null;
+
+    // Fallback: if card has a data-id, map to article-N.html
+    if (!href) {
+      const id = card.getAttribute('data-id');
+      if (id) href = `article-${id}.html`;
     }
-}
 
-// Make entire article cards clickable
-function setupArticleRedirects() {
-    const articleCards = document.querySelectorAll('.article-card');
-    
-    articleCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            // Don't redirect if clicking on a link or button inside the card
-            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
-                return;
-            }
-            
-            const articleId = this.getAttribute('data-id');
-            // In a real implementation, this would redirect to the actual article page
-            window.location.href = `article.html?id=${articleId}`;
-        });
-        
-        // Add hover effect styling
-        card.style.cursor = 'pointer';
-        card.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+    if (!href) return;
+
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      // Don’t hijack clicks on actual links/buttons inside the card
+      if (e.target.closest('a') || e.target.closest('button')) return;
+      window.location.href = href;
     });
+  });
 }
-
-// Setup dropdown navigation for articles
-function setupDropdownNavigation() {
-    const articlesSelect = document.getElementById('articles-select');
-    
-    if (articlesSelect) {
-        articlesSelect.addEventListener('change', function() {
-            if (this.value) {
-                // In a real implementation, this would redirect to the selected article
-                window.location.href = `article.html?id=${this.value}`;
-            }
-        });
-    }
-}
-
-// Setup smooth scrolling for anchor links
-function setupSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-}
-
-// Setup category filters
-function setupCategoryFilters() {
-    const categoryLinks = document.querySelectorAll('.categories-filter a');
-    
-    categoryLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all links
-            categoryLinks.forEach(l => l.classList.remove('active'));
-            
-            // Add active class to clicked link
-            this.classList.add('active');
-            
-            const category = this.textContent;
-            filterArticlesByCategory(category);
-        });
-    });
-}
-
-// Filter articles by category
-function filterArticlesByCategory(category) {
-    const articles = document.querySelectorAll('.article-card');
-    const sectionTitle = document.querySelector('.section-title');
-    
-    if (category === 'All News') {
-        articles.forEach(article => {
-            article.style.display = 'block';
-        });
-        if (sectionTitle) sectionTitle.textContent = 'All Articles';
-        return;
-    }
-    
-    let visibleCount = 0;
-    articles.forEach(article => {
-        const articleCategory = article.querySelector('.category-tag').textContent;
-        
-        if (articleCategory === category) {
-            article.style.display = 'block';
-            visibleCount++;
-        } else {
-            article.style.display = 'none';
-        }
-    });
-    
-    if (sectionTitle) {
-        sectionTitle.textContent = `${category} Articles (${visibleCount})`;
-    }
-}
-
-// Newsletter form validation
-function setupNewsletterValidation() {
-    const newsletterForm = document.querySelector('.newsletter form');
-    
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const emailInput = this.querySelector('input[type="email"]');
-            const email = emailInput.value.trim();
-            
-            if (!validateEmail(email)) {
-                alert('Please enter a valid email address.');
-                emailInput.focus();
-                return;
-            }
-            
-            // In a real implementation, you would send this to a server
-            alert(`Thank you for subscribing with: ${email}`);
-            emailInput.value = '';
-        });
-    }
-}
-
-// Email validation helper
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-// Initialize everything when DOM is fully loaded
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-} else {
-    init();
-}
-
-function init() {
-    initializeTheme();
-    setupArticleRedirects();
-    setupDropdownNavigation();
-    setupSmoothScrolling();
-    setupCategoryFilters();
-    setupNewsletterValidation();
-}
-
-// Add some additional modern features
-// Lazy loading for images
-if ('IntersectionObserver' in window) {
-    const lazyImages = document.querySelectorAll('img');
-    
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src || img.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-    
-    lazyImages.forEach(img => {
-        if (img.classList.contains('lazy')) {
-            imageObserver.observe(img);
-        }
-    });
-}
-
-// Add a "back to top" button
-function setupBackToTopButton() {
-    const backToTopButton = document.createElement('button');
-    backToTopButton.innerHTML = '&uarr;';
-    backToTopButton.classList.add('back-to-top');
-    backToTopButton.setAttribute('aria-label', 'Back to top');
-    document.body.appendChild(backToTopButton);
-    
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-    
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-// Add CSS for back to top button
-const backToTopStyles = `
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--gradient);
-    color: white;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 1000;
-}
-
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.back-to-top:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-`;
-
-// Inject the styles
-const styleSheet = document.createElement('style');
-styleSheet.textContent = backToTopStyles;
-document.head.appendChild(styleSheet);
-
-// Initialize the back to top button
-setupBackToTopButton();
