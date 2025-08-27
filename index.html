@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nexus News - Your Window to the World</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
@@ -13,8 +13,6 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-
-          <!-- Categories with hover dropdown -->
           <li class="dropdown">
             <a href="categories.html">Categories</a>
             <ul class="dropdown-menu">
@@ -22,16 +20,17 @@
               <li><a href="article-2.html">Sustainable Cities of the Future</a></li>
               <li><a href="article-3.html">Global Climate Pact Reached</a></li>
               <li><a href="article-4.html">Review: The New Titanium Smartphone</a></li>
+              <li><a href="article-5.html">Breakthrough in Artificial Intelligence</a></li>
+              <li><a href="article-6.html">Exploring the Depths of the Ocean</a></li>
+              <li><a href="article-7.html">Mars Colonization: Next Giant Leap</a></li>
+              <li><a href="article-8.html">The Future of Renewable Energy</a></li>
             </ul>
           </li>
-
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-
-      <!-- Dark mode toggle (persists via localStorage) -->
-      <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle dark mode">🌓</button>
+      <button id="theme-toggle-btn" class="theme-toggle-btn">🌓</button>
     </div>
   </header>
 
@@ -44,46 +43,76 @@
 
   <main class="container">
     <h2>Latest News</h2>
-
-    <!-- Make the entire card a link to stop 404s and remove the need for a Read More button -->
     <div class="article-grid">
-      <a class="article-card" href="article-1.html">
-        <img src="images/article-1-thumb.jpg" alt="Quantum Computing"/>
+      <div class="article-card" onclick="location.href='article-1.html'">
+        <img src="images/article-1-thumb.jpg" alt="Quantum Computing">
         <div class="article-content">
           <h3>The Rise of Quantum Computing</h3>
-          <p>Quantum computing is set to revolutionize technology as we know it. Researchers are making breakthroughs...</p>
+          <p>Quantum computing is set to revolutionize technology as we know it...</p>
         </div>
-      </a>
+      </div>
 
-      <a class="article-card" href="article-2.html">
-        <img src="images/article-2-thumb.jpg" alt="Sustainable Cities"/>
+      <div class="article-card" onclick="location.href='article-2.html'">
+        <img src="images/article-2-thumb.jpg" alt="Sustainable Cities">
         <div class="article-content">
           <h3>Sustainable Cities of the Future</h3>
-          <p>Urban planners are designing eco-friendly cities that could change how we live. From vertical gardens to...</p>
+          <p>Urban planners are designing eco-friendly cities that could change how we live...</p>
         </div>
-      </a>
+      </div>
 
-      <a class="article-card" href="article-3.html">
-        <img src="images/article-3-thumb.jpg" alt="Climate Pact"/>
+      <div class="article-card" onclick="location.href='article-3.html'">
+        <img src="images/article-3-thumb.jpg" alt="Climate Pact">
         <div class="article-content">
           <h3>Global Climate Pact Reached</h3>
-          <p>World leaders have agreed on a historic climate agreement that aims to limit global warming to 1.5°C...</p>
+          <p>World leaders have agreed on a historic climate agreement that aims to limit warming...</p>
         </div>
-      </a>
+      </div>
 
-      <a class="article-card" href="article-4.html">
-        <img src="images/article-4-thumb.jpg" alt="Smartphone Review"/>
+      <div class="article-card" onclick="location.href='article-4.html'">
+        <img src="images/article-4-thumb.jpg" alt="Smartphone Review">
         <div class="article-content">
           <h3>Review: The New Titanium Smartphone</h3>
-          <p>The latest flagship phone promises durability and performance with its titanium frame and advanced...</p>
+          <p>The latest flagship phone promises durability and performance with its titanium frame...</p>
         </div>
-      </a>
+      </div>
+
+      <div class="article-card" onclick="location.href='article-5.html'">
+        <img src="images/article-5-thumb.jpg" alt="AI Breakthrough">
+        <div class="article-content">
+          <h3>Breakthrough in Artificial Intelligence</h3>
+          <p>Researchers unveil a self-learning AI system that adapts across multiple domains...</p>
+        </div>
+      </div>
+
+      <div class="article-card" onclick="location.href='article-6.html'">
+        <img src="images/article-6-thumb.jpg" alt="Ocean Exploration">
+        <div class="article-content">
+          <h3>Exploring the Depths of the Ocean</h3>
+          <p>Submersibles and robotics reveal hidden ecosystems deep beneath the waves...</p>
+        </div>
+      </div>
+
+      <div class="article-card" onclick="location.href='article-7.html'">
+        <img src="images/article-7-thumb.jpg" alt="Mars Colonization">
+        <div class="article-content">
+          <h3>Mars Colonization: Next Giant Leap</h3>
+          <p>Humanity prepares to establish settlements on the Red Planet...</p>
+        </div>
+      </div>
+
+      <div class="article-card" onclick="location.href='article-8.html'">
+        <img src="images/article-8-thumb.jpg" alt="Renewable Energy">
+        <div class="article-content">
+          <h3>The Future of Renewable Energy</h3>
+          <p>Clean energy innovations are reshaping how the world powers itself...</p>
+        </div>
+      </div>
     </div>
 
     <div class="newsletter">
       <h3>Subscribe to Our Newsletter</h3>
       <form id="newsletterForm">
-        <input type="email" placeholder="Enter your email" required/>
+        <input type="email" placeholder="Enter your email" required>
         <button type="submit">Subscribe</button>
       </form>
     </div>

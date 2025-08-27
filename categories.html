@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nexus News - Categories</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories - Nexus News</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
@@ -13,8 +13,6 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-
-          <!-- Categories with hover dropdown -->
           <li class="dropdown">
             <a href="categories.html">Categories</a>
             <ul class="dropdown-menu">
@@ -22,56 +20,55 @@
               <li><a href="article-2.html">Sustainable Cities of the Future</a></li>
               <li><a href="article-3.html">Global Climate Pact Reached</a></li>
               <li><a href="article-4.html">Review: The New Titanium Smartphone</a></li>
+              <li><a href="article-5.html">Breakthrough in Artificial Intelligence</a></li>
+              <li><a href="article-6.html">Exploring the Depths of the Ocean</a></li>
+              <li><a href="article-7.html">Mars Colonization: Next Giant Leap</a></li>
+              <li><a href="article-8.html">The Future of Renewable Energy</a></li>
             </ul>
           </li>
-
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-
-      <!-- Dark mode toggle -->
-      <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle dark mode">🌓</button>
+      <button id="theme-toggle-btn" class="theme-toggle-btn">🌓</button>
     </div>
   </header>
 
   <main class="container">
-    <h2>Categories</h2>
-    <p>Select a story below or use the “Categories” hover menu in the header.</p>
-
-    <!-- Same four accessible articles (all whole-card links) -->
-    <div class="article-grid">
-      <a class="article-card" href="article-1.html">
-        <img src="images/article-1-thumb.jpg" alt="Quantum Computing"/>
-        <div class="article-content">
-          <h3>The Rise of Quantum Computing</h3>
-          <p>Quantum computing is set to revolutionize technology as we know it. Researchers are making breakthroughs...</p>
-        </div>
-      </a>
-
-      <a class="article-card" href="article-2.html">
-        <img src="images/article-2-thumb.jpg" alt="Sustainable Cities"/>
-        <div class="article-content">
-          <h3>Sustainable Cities of the Future</h3>
-          <p>Urban planners are designing eco-friendly cities that could change how we live. From vertical gardens to...</p>
-        </div>
-      </a>
-
-      <a class="article-card" href="article-3.html">
-        <img src="images/article-3-thumb.jpg" alt="Climate Pact"/>
-        <div class="article-content">
-          <h3>Global Climate Pact Reached</h3>
-          <p>World leaders have agreed on a historic climate agreement that aims to limit global warming to 1.5°C...</p>
-        </div>
-      </a>
-
-      <a class="article-card" href="article-4.html">
-        <img src="images/article-4-thumb.jpg" alt="Smartphone Review"/>
-        <div class="article-content">
-          <h3>Review: The New Titanium Smartphone</h3>
-          <p>The latest flagship phone promises durability and performance with its titanium frame and advanced...</p>
-        </div>
-      </a>
+    <h2>Browse Articles by Category</h2>
+    <div class="categories-grid">
+      <div class="category-card" onclick="location.href='article-1.html'">
+        <h3>Quantum Computing</h3>
+        <p>Discover the revolution in quantum technology.</p>
+      </div>
+      <div class="category-card" onclick="location.href='article-2.html'">
+        <h3>Sustainable Cities</h3>
+        <p>Explore eco-friendly urban planning solutions.</p>
+      </div>
+      <div class="category-card" onclick="location.href='article-3.html'">
+        <h3>Climate Pact</h3>
+        <p>World leaders unite to fight climate change.</p>
+      </div>
+      <div class="category-card" onclick="location.href='article-4.html'">
+        <h3>Smartphone Review</h3>
+        <p>A closer look at the new titanium smartphone.</p>
+      </div>
+      <div class="category-card" onclick="location.href='article-5.html'">
+        <h3>Artificial Intelligence</h3>
+        <p>Breakthroughs in self-learning AI systems.</p>
+      </div>
+      <div class="category-card" onclick="location.href='article-6.html'">
+        <h3>Ocean Exploration</h3>
+        <p>Exploring the last frontier of Earth’s oceans.</p>
+      </div>
+      <div class="category-card" onclick="location.href='article-7.html'">
+        <h3>Mars Colonization</h3>
+        <p>Preparing for humanity’s settlement on Mars.</p>
+      </div>
+      <div class="category-card" onclick="location.href='article-8.html'">
+        <h3>Renewable Energy</h3>
+        <p>The innovations shaping our sustainable future.</p>
+      </div>
     </div>
   </main>
 
